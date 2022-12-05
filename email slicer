@@ -1,0 +1,16 @@
+def email_sclicer(email):
+    """
+    seperates text before "@" and after "@"
+    """
+    i=email.index("@")
+    return  email[:i],email[i+1:]  #returns a tuple containing string before and after "@"
+
+
+while True:
+    email = input("Enter your email: ")
+    if "@" in email:
+        domain,username=email_sclicer(email)
+        print(f"username: {domain.upper()} and domain: {username}")
+        break
+    else:
+        print("Enter correct Email")
